@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+    
+$SoftBlue: hsl(215, 51%, 70%);
+$Cyan: hsl(178, 100%, 50%);
+$VeryDarkBlue01: hsl(217, 54%, 11%);
+$VeryDarkBlue02: hsl(216, 50%, 16%);
+$VeryDarkBlue03: hsl(215, 32%, 27%);
+$White: hsl(0, 0%, 100%);
+
+$fontOutfit: 'Outfit', sans-serif;
+
+html {
+    font-size: 62.5%;
+}
+main {
+    background-color: $VeryDarkBlue01;
+    font-size: 1.5rem;
+    font-family: $fontOutfit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    .card {
+        width: 90%;
+        max-width: 375px;
+        margin: 0 auto;
+        padding: 1.5em;
+        background-color: $VeryDarkBlue02;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px rgba($VeryDarkBlue01, .6);
+        &__container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            .card__icon {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                width: 100%;
+                height: 100%;
+                object-fit: none;
+                background: rgba($Cyan, .5);
+                clip-path: circle(0.5% at 0 0);
+                transition: clip-path .5s ease-in-out;
+            }
+            &:hover .card__icon {
+                clip-path: circle(140.2% at 0 1%);
+            }
+        }
+        &__title {
+            font-size: 2.5rem;
+            color: $White;
+            margin: .5em 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color .5s ease;
+            &:hover {
+                color: $Cyan;
+            }
+        }
+        &__paragraph {
+            color: $SoftBlue;
+            font-size: 1.5rem;
+            margin: .5em 0;
+        }
+        .card__container-data {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid $VeryDarkBlue03;
+            padding:  .5em 0 .7em;
+            .text {
+                display: flex;
+                align-items: center;
+                color: $Cyan;
+                font-size: 1.5rem;
+                gap: .5em;
+            }
+            .text-active {
+                color: $SoftBlue;
+            }
+        }
+        .avatar {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 1.5em 0 0;
+            img {
+                width: 35px;
+                margin-right: 1em;
+                border-radius: 50%;
+                border: 1px solid $White;
+                object-fit: cover;
+            }
+            p {
+                color: $SoftBlue;
+                font-size: 1.5rem;
+                a {
+                    color: $White;
+                    transition: color .5s ease;
+                    text-decoration: none;
+                    &:hover {
+                        color: $Cyan;
+                    }
+                }
+            }
+        }
+    }
+}
